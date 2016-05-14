@@ -1,8 +1,6 @@
 package utils
 
 import (
-	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"log"
 	"os/user"

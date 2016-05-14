@@ -4,7 +4,8 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
-	"go-http-api/client"
+
+	"github.com/spothala/go-http-api/client"
 )
 
 func RespondJson(w http.ResponseWriter, JsonType interface{}) {
@@ -35,13 +36,13 @@ func WriteJson(JsonType interface{}) []byte {
 }
 
 func WriteJsonToFile(JsonType interface{}, file string) {
-	 WriteBytesToFile(WriteJson(JsonType), file)
+	WriteBytesToFile(WriteJson(JsonType), file)
 }
 
 func ReturnPrettyPrintJson(body []byte) string {
-	 output, err := json.MarshalIndent(GetJson(body), "", "   ")
-	 if err != nil {
-	         log.Print("Json Intending Error: ", err)
-	 }
-	 return string(output)
+	output, err := json.MarshalIndent(GetJson(body), "", "   ")
+	if err != nil {
+		log.Print("Json Intending Error: ", err)
+	}
+	return string(output)
 }
